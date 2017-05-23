@@ -35,9 +35,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.roundButton1 = new demo2.RoundButton();
             this.btnconectar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.roundButton1 = new demo2.RoundButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carga de Archivo";
             // 
+            // btnconectar
+            // 
+            this.btnconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnconectar.Location = new System.Drawing.Point(457, 306);
+            this.btnconectar.Name = "btnconectar";
+            this.btnconectar.Size = new System.Drawing.Size(781, 23);
+            this.btnconectar.TabIndex = 7;
+            this.btnconectar.Text = "Conectar a BD";
+            this.btnconectar.UseVisualStyleBackColor = true;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Location = new System.Drawing.Point(457, 339);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(781, 23);
+            this.btnSave.TabIndex = 8;
+            this.btnSave.Text = "Save register";
+            this.btnSave.UseVisualStyleBackColor = true;
+            // 
             // roundButton1
             // 
             this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
@@ -110,24 +130,6 @@
             this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.roundButton1.UseVisualStyleBackColor = true;
             this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
-            // 
-            // btnconectar
-            // 
-            this.btnconectar.Location = new System.Drawing.Point(457, 306);
-            this.btnconectar.Name = "btnconectar";
-            this.btnconectar.Size = new System.Drawing.Size(781, 23);
-            this.btnconectar.TabIndex = 7;
-            this.btnconectar.Text = "Conectar a BD";
-            this.btnconectar.UseVisualStyleBackColor = true;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(457, 339);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(781, 23);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save register";
-            this.btnSave.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
