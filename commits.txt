@@ -1,0 +1,18 @@
+commit 0bb19d839cebcef07a32f73359d52ab968710601
+Author: Rodrigo <academiacp@mail.com>
+Date:   Tue May 23 12:22:22 2017 -0400
+
+
+se agregaron dos botones al formulario
+
+commit 08e7dc28bca7cc0040b75d0c7524e9a55c3a03a8
+Author: Rodrigo <academiacp@mail.com>
+Date:   Tue May 23 12:16:30 2017 -0400
+
+    agregamos titulo al formulario
+
+commit bd78dc68a3ca25eae3e1a52f1d842dcc1df926bd
+Author: Rodrigo <academiacp@mail.com>
+Date:   Tue May 23 12:13:36 2017 -0400
+
+    Iniciamos Proyecto
