@@ -21,8 +21,6 @@ namespace demo2
            
         }
        
-
-
         // Conecction Excel 2003, 2007
         public string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
         public string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
@@ -31,8 +29,7 @@ namespace demo2
 
         private void btnbuscar_Click(object sender, EventArgs e)
         {
-            
-           
+                   
         }
 
         private void roundButton1_Click(object sender, EventArgs e)
