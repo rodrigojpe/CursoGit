@@ -35,9 +35,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.roundButton1 = new demo2.RoundButton();
             this.btnconectar = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.roundButton1 = new demo2.RoundButton();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +100,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carga de Archivo";
             // 
+            // roundButton1
+            // 
+            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
+            this.roundButton1.Location = new System.Drawing.Point(25, 34);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(98, 96);
+            this.roundButton1.TabIndex = 5;
+            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.roundButton1.UseVisualStyleBackColor = true;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // btnconectar
             // 
             this.btnconectar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -119,23 +132,22 @@
             this.btnSave.Text = "Save register";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
-            // roundButton1
+            // button1
             // 
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
-            this.roundButton1.Location = new System.Drawing.Point(25, 34);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(98, 96);
-            this.roundButton1.TabIndex = 5;
-            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.roundButton1.UseVisualStyleBackColor = true;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(457, 377);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(781, 23);
+            this.button1.TabIndex = 9;
+            this.button1.Text = "???";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1250, 498);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnconectar);
             this.Controls.Add(this.groupBox1);
@@ -160,6 +172,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnconectar;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button button1;
     }
 }
 
