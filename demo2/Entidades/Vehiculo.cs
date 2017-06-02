@@ -44,7 +44,9 @@ namespace demo2.Entidades
         public string seudonimo_sap { get; set; }
 
         public string tramite { get; set; }
-             
+
+        public int line_id { get; set; }
+
 
     }
 }

@@ -154,8 +154,9 @@ namespace demo2
                 //dataGridView1.Columns[10] != null && dataGridView1.Columns[11] != null && dataGridView1.Columns[12] != null && dataGridView1.Columns[13] != null && dataGridView1.Columns[14] != null &&
                 //dataGridView1.Columns[15] != null && dataGridView1.Columns[16] != null)
                 //{
-                    
-                    dataGridView1.DataSource = null;
+
+                  
+                    dataGridView1.FirstDisplayedCell = null;
                     cbo1.DataSource = null;
                     cbo2.DataSource = null;
                     cbo3.DataSource =null;
@@ -365,19 +366,51 @@ namespace demo2
                     vehicuulos.Add(vehiculo);
                    
                 }
-                
 
-                var groupedCustomerList = vehicuulos
-                 .GroupBy(u => u.invoice_number)
-                 .Select(grp => grp.ToList())
-                 .ToList();
 
-                    foreach (var despacho in groupedCustomerList[0])
+                  //var groupedCustomerList = vehicuulos.GroupBy(u => u.invoice_number ).Select(grp => grp.ToList()).ToList();
+
+                var groupedCustomerList = vehicuulos.GroupBy(x => x.invoice_number)
+                    .Select(g => g.First()).ToList();
+
+
+
+
+
+
+
+                var groups1 = groupedCustomerList.GroupBy(n => n.codigo_sap, n => n.invoice_number).Select(n => new
+                {
+                    MetricName = n.Key,
+                    MetricCount = n.Count()
+                }).OrderBy(n => n.MetricCount).ToList();
+
+                //var groups2 = groupedCustomerList[0].GroupBy(n => n.codigo_sap, n => n.invoice_number).Select(n => new
+                //{
+                //    MetricName = n.Key,
+                //    MetricCount = n.Count()
+                //}).OrderBy(n => n.MetricName).ToList();
+
+                //var groups3 = groupedCustomerList[1].GroupBy(n => n.codigo_sap, n => n.invoice_number).Select(n => new
+                //{
+                //    MetricName = n.Key,
+                //    MetricCount = n.Count()
+                //}).OrderBy(n => n.MetricName).ToList();
+
+                //var groups4 = groupedCustomerList[1].GroupBy(n => n.codigo_sap, n => n.invoice_number).Select(n => new
+                //{
+                //    MetricName = n.Key,
+                //    MetricCount = n.Count()
+                //}).OrderBy(n => n.MetricCount).ToList();
+
+                var pausa = 0;
+
+                foreach (var despacho in groupedCustomerList)
                     {
                         string ConnString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString.ToString();
                         try
                         {
-                            int foreingK = 0;
+                           // int foreingK = 0;
                             using (SqlConnection conn = new SqlConnection(ConnString))
                             {
                                 conn.Open();
@@ -390,14 +423,29 @@ namespace demo2
                                 cmd.Parameters.AddWithValue("@invoice_number", despacho.invoice_number);
                                 cmd.Parameters.AddWithValue("@invoice_cnc", despacho.invoice_currency_n_c);
 
-                                foreingK = cmd.ExecuteNonQuery();
+                            //foreingK = cmd.ExecuteNonQuery();
+                            int z = 1;
                                 var fkk = (int)cmd.ExecuteScalar();
-                               // cmd.CommandText = "SELECT @@IDENTITY";
+                            /// setea el objeto veiculo 
+                           vehicuulos.Where(x => x.invoice_number == despacho.invoice_number).ToList().ForEach(i => i.cusdec_id = fkk);
+
+                            foreach (var groups in vehicuulos.Where(x => x.invoice_number == despacho.invoice_number).GroupBy(i => i.codigo_sap))
+                            {
+                                foreach (var group in groups)
+                                {
+                                    group.line_id = z;
+                                }
+                                z++;
+                            }    
+                            
+
+                            Vehiculo v = new Vehiculo();
+                            v.cusdec_id.GetTypeCode();
 
                             if (conn.State == System.Data.ConnectionState.Open) conn.Close();
 
                                 MessageBox.Show("Good", "Insert succesfull !!!");
-                                break;
+                                
                             }
                         }
 
@@ -406,51 +454,9 @@ namespace demo2
                             MessageBox.Show("Error tipo : " + ex);
 
                         }
-                    break;
+                   
                     }
-
-
-
-
-                try
-                {
-                    foreach (var despacho in groupedCustomerList[1])
-                    {
-                        int foreingK = 0;
-                        
-
-                            string ConnString = ConfigurationManager.ConnectionStrings["connectionString"].ConnectionString.ToString();
-
-                            using (SqlConnection conn = new SqlConnection(ConnString))
-                            {
-                                conn.Open();
-                                SqlCommand cmd = new SqlCommand("INSERT INTO Edi_File.dbo.CUSDEC_HEADER (RutCliente, Numsucursal, Invoice_Date, Invoice_Number, Invoice_currency_name_code)" +
-                                                "values(@rut, @num_sucursal, @invoice_date, @invoice_number, @invoice_cnc) select CAST(scope_identity() AS int)", conn);
-
-                                cmd.Parameters.AddWithValue("@rut", despacho.rut_cliente);
-                                cmd.Parameters.AddWithValue("@num_sucursal", despacho.num_sucursal);
-                                cmd.Parameters.AddWithValue("@invoice_date", despacho.invoice_date);
-                                cmd.Parameters.AddWithValue("@invoice_number", despacho.invoice_number);
-                                cmd.Parameters.AddWithValue("@invoice_cnc", despacho.invoice_currency_n_c);
-
-                                foreingK = cmd.ExecuteNonQuery();
-                                var fkk = (int)cmd.ExecuteScalar();
-                                //cmd.CommandText = "SELECT @@IDENTITY";
-
-                                if (conn.State == System.Data.ConnectionState.Open) conn.Close();
-
-                                MessageBox.Show("Good", "Insert succesfull !!!");
-                               
-                            }
-                            break;
-                        }
-                    
-                }
-                catch (SqlException ex)
-                {
-                    MessageBox.Show("Error tipo : " + ex);
-
-                }
+                           
             }
             catch (Exception ex)
             {
