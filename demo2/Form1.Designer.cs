@@ -35,7 +35,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnInsert = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnInsert2 = new System.Windows.Forms.Button();
             this.CmdAddbutton_click = new System.Windows.Forms.Button();
             this.btnMostrar = new System.Windows.Forms.Button();
             this.btncargar = new System.Windows.Forms.Button();
@@ -43,14 +43,17 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.btnClearGv = new System.Windows.Forms.Button();
+            this.lblprimaryKey = new System.Windows.Forms.Label();
+            this.lblshow = new System.Windows.Forms.Label();
+            this.roundButton1 = new demo2.RoundButton();
             this.cbo1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.cbo8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.cbo8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo9 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo10 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo11 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -60,9 +63,6 @@
             this.cbo15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo16 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo17 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.roundButton1 = new demo2.RoundButton();
-            this.lblprimaryKey = new System.Windows.Forms.Label();
-            this.lblshow = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -72,24 +72,24 @@
             // radio1
             // 
             this.radio1.AutoSize = true;
+            this.radio1.Checked = true;
             this.radio1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio1.Location = new System.Drawing.Point(196, 113);
             this.radio1.Name = "radio1";
             this.radio1.Size = new System.Drawing.Size(54, 22);
             this.radio1.TabIndex = 2;
+            this.radio1.TabStop = true;
             this.radio1.Text = "Yes";
             this.radio1.UseVisualStyleBackColor = true;
             // 
             // radio
             // 
             this.radio.AutoSize = true;
-            this.radio.Checked = true;
             this.radio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radio.Location = new System.Drawing.Point(261, 113);
             this.radio.Name = "radio";
             this.radio.Size = new System.Drawing.Size(48, 22);
             this.radio.TabIndex = 3;
-            this.radio.TabStop = true;
             this.radio.Text = "No";
             this.radio.UseVisualStyleBackColor = true;
             // 
@@ -125,18 +125,18 @@
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(781, 23);
             this.btnInsert.TabIndex = 7;
-            this.btnInsert.Text = "Insert register to Database";
+            this.btnInsert.Text = "Insert First register to Database \"Cusdec_Header\"";
             this.btnInsert.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // btnInsert2
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(457, 436);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(781, 23);
-            this.btnSave.TabIndex = 8;
-            this.btnSave.Text = "Save register";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnInsert2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInsert2.Location = new System.Drawing.Point(457, 436);
+            this.btnInsert2.Name = "btnInsert2";
+            this.btnInsert2.Size = new System.Drawing.Size(781, 23);
+            this.btnInsert2.TabIndex = 8;
+            this.btnInsert2.Text = "Insert Second Table \"cusdec_Detail\"";
+            this.btnInsert2.UseVisualStyleBackColor = true;
             // 
             // CmdAddbutton_click
             // 
@@ -177,12 +177,12 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.cbo1,
             this.cbo2,
+            this.cbo8,
             this.cbo3,
             this.cbo4,
             this.cbo5,
             this.cbo6,
             this.cbo7,
-            this.cbo8,
             this.cbo9,
             this.cbo10,
             this.cbo11,
@@ -192,7 +192,7 @@
             this.cbo15,
             this.cbo16,
             this.cbo17});
-            this.dataGridView1.Location = new System.Drawing.Point(1, 2);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1788, 99);
             this.dataGridView1.TabIndex = 13;
@@ -225,13 +225,40 @@
             this.btnClearGv.UseVisualStyleBackColor = true;
             this.btnClearGv.Click += new System.EventHandler(this.btnClearGv_Click);
             // 
+            // lblprimaryKey
+            // 
+            this.lblprimaryKey.AutoSize = true;
+            this.lblprimaryKey.Location = new System.Drawing.Point(1266, 403);
+            this.lblprimaryKey.Name = "lblprimaryKey";
+            this.lblprimaryKey.Size = new System.Drawing.Size(119, 13);
+            this.lblprimaryKey.TabIndex = 17;
+            this.lblprimaryKey.Text = "Primary key First Table :";
+            // 
+            // lblshow
+            // 
+            this.lblshow.AutoSize = true;
+            this.lblshow.Location = new System.Drawing.Point(1400, 403);
+            this.lblshow.Name = "lblshow";
+            this.lblshow.Size = new System.Drawing.Size(61, 13);
+            this.lblshow.TabIndex = 18;
+            this.lblshow.Text = "?????????";
+            // 
+            // roundButton1
+            // 
+            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
+            this.roundButton1.Location = new System.Drawing.Point(22, 61);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(98, 96);
+            this.roundButton1.TabIndex = 5;
+            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.roundButton1.UseVisualStyleBackColor = true;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // cbo1
             // 
-            this.cbo1.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.ComboBox;
             this.cbo1.FillWeight = 105F;
             this.cbo1.HeaderText = "Rut Cliente";
-            this.cbo1.Items.AddRange(new object[] {
-            "GM"});
             this.cbo1.Name = "cbo1";
             this.cbo1.Width = 105;
             // 
@@ -240,10 +267,17 @@
             this.cbo2.DataPropertyName = "cbo2";
             this.cbo2.FillWeight = 105F;
             this.cbo2.HeaderText = "N° Sucursal";
-            this.cbo2.Items.AddRange(new object[] {
-            "3"});
             this.cbo2.Name = "cbo2";
             this.cbo2.Width = 105;
+            // 
+            // cbo8
+            // 
+            this.cbo8.FillWeight = 105F;
+            this.cbo8.HeaderText = "Package Qty";
+            this.cbo8.Name = "cbo8";
+            this.cbo8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cbo8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.cbo8.Width = 105;
             // 
             // cbo3
             // 
@@ -264,9 +298,6 @@
             // 
             this.cbo5.FillWeight = 105F;
             this.cbo5.HeaderText = "Invoice Currency Name Code";
-            this.cbo5.Items.AddRange(new object[] {
-            "USD",
-            "CLP"});
             this.cbo5.Name = "cbo5";
             this.cbo5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cbo5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -289,17 +320,6 @@
             this.cbo7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cbo7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cbo7.Width = 105;
-            // 
-            // cbo8
-            // 
-            this.cbo8.FillWeight = 105F;
-            this.cbo8.HeaderText = "Package Qty";
-            this.cbo8.Items.AddRange(new object[] {
-            "1"});
-            this.cbo8.Name = "cbo8";
-            this.cbo8.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cbo8.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.cbo8.Width = 105;
             // 
             // cbo9
             // 
@@ -379,36 +399,6 @@
             this.cbo17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cbo17.Width = 105;
             // 
-            // roundButton1
-            // 
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
-            this.roundButton1.Location = new System.Drawing.Point(22, 61);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(98, 96);
-            this.roundButton1.TabIndex = 5;
-            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.roundButton1.UseVisualStyleBackColor = true;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
-            // 
-            // lblprimaryKey
-            // 
-            this.lblprimaryKey.AutoSize = true;
-            this.lblprimaryKey.Location = new System.Drawing.Point(1266, 403);
-            this.lblprimaryKey.Name = "lblprimaryKey";
-            this.lblprimaryKey.Size = new System.Drawing.Size(119, 13);
-            this.lblprimaryKey.TabIndex = 17;
-            this.lblprimaryKey.Text = "Primary key First Table :";
-            // 
-            // lblshow
-            // 
-            this.lblshow.AutoSize = true;
-            this.lblshow.Location = new System.Drawing.Point(1400, 403);
-            this.lblshow.Name = "lblshow";
-            this.lblshow.Size = new System.Drawing.Size(61, 13);
-            this.lblshow.TabIndex = 18;
-            this.lblshow.Text = "?????????";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,7 +413,7 @@
             this.Controls.Add(this.btncargar);
             this.Controls.Add(this.btnMostrar);
             this.Controls.Add(this.CmdAddbutton_click);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnInsert2);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -447,7 +437,7 @@
         private RoundButton roundButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnInsert2;
         private System.Windows.Forms.Button CmdAddbutton_click;
         private System.Windows.Forms.Button btnMostrar;
         private System.Windows.Forms.Button btncargar;
@@ -455,14 +445,16 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnClearGv;
+        private System.Windows.Forms.Label lblprimaryKey;
+        private System.Windows.Forms.Label lblshow;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo1;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo2;
+        private System.Windows.Forms.DataGridViewComboBoxColumn cbo8;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo3;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo4;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo5;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo6;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo7;
-        private System.Windows.Forms.DataGridViewComboBoxColumn cbo8;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo9;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo10;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo11;
@@ -472,8 +464,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo15;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo16;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo17;
-        private System.Windows.Forms.Label lblprimaryKey;
-        private System.Windows.Forms.Label lblshow;
     }
 }
 
