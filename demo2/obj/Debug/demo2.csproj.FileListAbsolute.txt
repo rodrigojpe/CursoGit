@@ -7,3 +7,4 @@ C:\Users\Desarrollo11\Desktop\proyecto excel\demo2\demo2\obj\Debug\demo2.csproj.
 C:\Users\Desarrollo11\Desktop\proyecto excel\demo2\demo2\obj\Debug\demo2.exe
 C:\Users\Desarrollo11\Desktop\proyecto excel\demo2\demo2\obj\Debug\demo2.pdb
 C:\Users\Desarrollo11\Desktop\proyecto excel\demo2\demo2\obj\Debug\demo2.csprojResolveAssemblyReference.cache
+C:\Users\Desarrollo11\Desktop\proyecto excel\demo2\demo2\bin\Debug\MetroFramework.dll

@@ -29,23 +29,18 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.radio1 = new System.Windows.Forms.RadioButton();
             this.radio = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnInsert = new System.Windows.Forms.Button();
-            this.btnInsert2 = new System.Windows.Forms.Button();
-            this.CmdAddbutton_click = new System.Windows.Forms.Button();
-            this.btnMostrar = new System.Windows.Forms.Button();
-            this.btncargar = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnClearGv = new System.Windows.Forms.Button();
-            this.lblprimaryKey = new System.Windows.Forms.Label();
-            this.lblshow = new System.Windows.Forms.Label();
             this.roundButton1 = new demo2.RoundButton();
+            this.btnInsert = new System.Windows.Forms.Button();
+            this.btnMostrar = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.cbo1 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo2 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo8 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -63,10 +58,16 @@
             this.cbo15 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo16 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.cbo17 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnClearGv = new System.Windows.Forms.Button();
+            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
+            this.Colum1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
             // 
             // radio1
@@ -111,63 +112,47 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.radio);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(12, 360);
+            this.groupBox1.Location = new System.Drawing.Point(12, 432);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(429, 212);
+            this.groupBox1.Size = new System.Drawing.Size(429, 235);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Carga de Archivo";
             // 
+            // roundButton1
+            // 
+            this.roundButton1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
+            this.roundButton1.Location = new System.Drawing.Point(3, 18);
+            this.roundButton1.Name = "roundButton1";
+            this.roundButton1.Size = new System.Drawing.Size(134, 214);
+            this.roundButton1.TabIndex = 5;
+            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.roundButton1.UseVisualStyleBackColor = true;
+            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
+            // 
             // btnInsert
             // 
             this.btnInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert.Location = new System.Drawing.Point(457, 398);
+            this.btnInsert.Location = new System.Drawing.Point(458, 523);
             this.btnInsert.Name = "btnInsert";
-            this.btnInsert.Size = new System.Drawing.Size(781, 23);
+            this.btnInsert.Size = new System.Drawing.Size(781, 59);
             this.btnInsert.TabIndex = 7;
-            this.btnInsert.Text = "Insert First register to Database \"Cusdec_Header\"";
+            this.btnInsert.Text = "Insert Register to Database Sql ";
             this.btnInsert.UseVisualStyleBackColor = true;
-            // 
-            // btnInsert2
-            // 
-            this.btnInsert2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInsert2.Location = new System.Drawing.Point(457, 436);
-            this.btnInsert2.Name = "btnInsert2";
-            this.btnInsert2.Size = new System.Drawing.Size(781, 23);
-            this.btnInsert2.TabIndex = 8;
-            this.btnInsert2.Text = "Insert Second Table \"cusdec_Detail\"";
-            this.btnInsert2.UseVisualStyleBackColor = true;
-            // 
-            // CmdAddbutton_click
-            // 
-            this.CmdAddbutton_click.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CmdAddbutton_click.Location = new System.Drawing.Point(457, 474);
-            this.CmdAddbutton_click.Name = "CmdAddbutton_click";
-            this.CmdAddbutton_click.Size = new System.Drawing.Size(781, 23);
-            this.CmdAddbutton_click.TabIndex = 9;
-            this.CmdAddbutton_click.Text = "AddCombobox";
-            this.CmdAddbutton_click.UseVisualStyleBackColor = true;
+            this.btnInsert.Click += new System.EventHandler(this.btnInsert_Click);
             // 
             // btnMostrar
             // 
             this.btnMostrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMostrar.Location = new System.Drawing.Point(457, 548);
+            this.btnMostrar.Location = new System.Drawing.Point(458, 602);
             this.btnMostrar.Name = "btnMostrar";
-            this.btnMostrar.Size = new System.Drawing.Size(781, 23);
+            this.btnMostrar.Size = new System.Drawing.Size(781, 57);
             this.btnMostrar.TabIndex = 10;
             this.btnMostrar.Text = "Mostrar datos seleccionados";
             this.btnMostrar.UseVisualStyleBackColor = true;
             this.btnMostrar.Click += new System.EventHandler(this.btnMostrar_Click);
-            // 
-            // btncargar
-            // 
-            this.btncargar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncargar.Location = new System.Drawing.Point(457, 509);
-            this.btncargar.Name = "btncargar";
-            this.btncargar.Size = new System.Drawing.Size(781, 23);
-            this.btncargar.TabIndex = 11;
-            this.btncargar.Text = "Cargar";
-            this.btncargar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -196,64 +181,6 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(1788, 99);
             this.dataGridView1.TabIndex = 13;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(1, 107);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(1788, 234);
-            this.dataGridView2.TabIndex = 14;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(1, 107);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(1788, 21);
-            this.dataGridView3.TabIndex = 15;
-            this.dataGridView3.Visible = false;
-            // 
-            // btnClearGv
-            // 
-            this.btnClearGv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnClearGv.Location = new System.Drawing.Point(457, 360);
-            this.btnClearGv.Name = "btnClearGv";
-            this.btnClearGv.Size = new System.Drawing.Size(1277, 23);
-            this.btnClearGv.TabIndex = 16;
-            this.btnClearGv.Text = "Limpiar registros de la Tabla";
-            this.btnClearGv.UseVisualStyleBackColor = true;
-            this.btnClearGv.Click += new System.EventHandler(this.btnClearGv_Click);
-            // 
-            // lblprimaryKey
-            // 
-            this.lblprimaryKey.AutoSize = true;
-            this.lblprimaryKey.Location = new System.Drawing.Point(1266, 403);
-            this.lblprimaryKey.Name = "lblprimaryKey";
-            this.lblprimaryKey.Size = new System.Drawing.Size(119, 13);
-            this.lblprimaryKey.TabIndex = 17;
-            this.lblprimaryKey.Text = "Primary key First Table :";
-            // 
-            // lblshow
-            // 
-            this.lblshow.AutoSize = true;
-            this.lblshow.Location = new System.Drawing.Point(1400, 403);
-            this.lblshow.Name = "lblshow";
-            this.lblshow.Size = new System.Drawing.Size(61, 13);
-            this.lblshow.TabIndex = 18;
-            this.lblshow.Text = "?????????";
-            // 
-            // roundButton1
-            // 
-            this.roundButton1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.roundButton1.Image = ((System.Drawing.Image)(resources.GetObject("roundButton1.Image")));
-            this.roundButton1.Location = new System.Drawing.Point(22, 61);
-            this.roundButton1.Name = "roundButton1";
-            this.roundButton1.Size = new System.Drawing.Size(98, 96);
-            this.roundButton1.TabIndex = 5;
-            this.roundButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.roundButton1.UseVisualStyleBackColor = true;
-            this.roundButton1.Click += new System.EventHandler(this.roundButton1_Click);
             // 
             // cbo1
             // 
@@ -399,21 +326,95 @@
             this.cbo17.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.cbo17.Width = 105;
             // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(1, 107);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(1788, 307);
+            this.dataGridView2.TabIndex = 14;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(1, 107);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(1788, 21);
+            this.dataGridView3.TabIndex = 15;
+            this.dataGridView3.Visible = false;
+            // 
+            // btnClearGv
+            // 
+            this.btnClearGv.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClearGv.Location = new System.Drawing.Point(458, 447);
+            this.btnClearGv.Name = "btnClearGv";
+            this.btnClearGv.Size = new System.Drawing.Size(781, 56);
+            this.btnClearGv.TabIndex = 16;
+            this.btnClearGv.Text = "Limpiar registros de la Tabla";
+            this.btnClearGv.UseVisualStyleBackColor = true;
+            this.btnClearGv.Click += new System.EventHandler(this.btnClearGv_Click);
+            // 
+            // metroGrid1
+            // 
+            this.metroGrid1.AllowUserToResizeRows = false;
+            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Colum1});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle2;
+            this.metroGrid1.EnableHeadersVisualStyles = false;
+            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.metroGrid1.Location = new System.Drawing.Point(1288, 447);
+            this.metroGrid1.Name = "metroGrid1";
+            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(174)))), ((int)(((byte)(219)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(198)))), ((int)(((byte)(247)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.metroGrid1.Size = new System.Drawing.Size(240, 150);
+            this.metroGrid1.TabIndex = 17;
+            // 
+            // Colum1
+            // 
+            this.Colum1.HeaderText = "Cusdec_ID";
+            this.Colum1.Name = "Colum1";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1801, 584);
-            this.Controls.Add(this.lblshow);
-            this.Controls.Add(this.lblprimaryKey);
+            this.ClientSize = new System.Drawing.Size(1801, 679);
+            this.Controls.Add(this.metroGrid1);
             this.Controls.Add(this.btnClearGv);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btncargar);
             this.Controls.Add(this.btnMostrar);
-            this.Controls.Add(this.CmdAddbutton_click);
-            this.Controls.Add(this.btnInsert2);
             this.Controls.Add(this.btnInsert);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
@@ -424,8 +425,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -437,16 +438,11 @@
         private RoundButton roundButton1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnInsert2;
-        private System.Windows.Forms.Button CmdAddbutton_click;
         private System.Windows.Forms.Button btnMostrar;
-        private System.Windows.Forms.Button btncargar;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.Button btnClearGv;
-        private System.Windows.Forms.Label lblprimaryKey;
-        private System.Windows.Forms.Label lblshow;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo1;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo2;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo8;
@@ -464,6 +460,8 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo15;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo16;
         private System.Windows.Forms.DataGridViewComboBoxColumn cbo17;
+        private MetroFramework.Controls.MetroGrid metroGrid1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Colum1;
     }
 }
 

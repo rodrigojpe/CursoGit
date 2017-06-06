@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace demo2.Entidades
+namespace Demo3
 {
     class Vehiculo
     {
@@ -22,9 +22,9 @@ namespace demo2.Entidades
 
         public string net_value { get; set; }
 
-        public string  z_description { get; set; }
+        public string z_description { get; set; }
 
-      //  public string line_id { get; set; }
+        //  public string line_id { get; set; }
 
         public int package_qty { get; set; }
 
@@ -47,7 +47,6 @@ namespace demo2.Entidades
         public string tramite { get; set; }
 
         public int line_id { get; set; }
-
 
     }
 }
